@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body style="background-color:#F8F8F8;">
+    <div class="w3-container">
+      <div class="w3-display-topleft" style="width: 40%; margin-left: 10px;">
+        <h2>Sent</h2>
+        <div style="overflow-y: scroll; height:300px;">
+          <table class="w3-table-all w3-card-4">
+            <tr class="w3-blue">
+              <th>Address</th>
+              <th>Amount</th>
+            </tr>
+            {% for i,j in transactionss %}
+            <tr>
+              <td>{{ i }}</td>
+              <td>{{ j }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+      <div class="w3-display-topright" style="width: 40%; margin-right: 10px;">
+        <h2>Received</h2>
+        <div style="overflow-y: scroll; height:300px;">
+          <table class="w3-table-all w3-card-4">
+            <tr class="w3-blue">
+              <th>Address</th>
+              <th>Amount</th>
+            </tr>
+            {% for i,j in transactionsr %}
+            <tr class="w3-hover-sand">
+              <td>{{ i }}</td>
+              <td>{{ j }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+      <div
+        class="w3-display-topmiddle w3-container w3-card-4 w3-blue w3-round-xxlarge w3-centre"
+        style="margin-top: 65px; margin-right: 10px;"
+      >
+        <h2 class="w3-xlarge">Current Balance</h2>
+        <p class="w3-xlarge w3-text-black">{{ balance }}</p>
+      </div>
+    </div>
+    <div
+      class="w3-container"
+      style="margin-top: 400px; margin-left:15px; margin-right:15px"
+    >
+      <form method="POST">
+        <label class="w3-label w3-text-blue w3-margin-bottom">To</label>
+        <input
+          style="background-color:#F8F8F8;"
+          class="w3-input w3-margin-bottom"
+          type="text"
+          name="to"
+        />
+        <label class="w3-label w3-text-blue w3-margin-bottom">Amount</label>
+        <input
+          style="background-color:#F8F8F8;"
+          class="w3-input w3-margin-bottom"
+          type="text"
+          name="value"
+        />
+        <button class="w3-button w3-blue" type="submit">
+          Send
+        </button>
+        <p class="w3-text-blue">{{ message }}</p>
+      </form>
+      <button
+        onclick="window.open('{{ url_for('index') }}', '_top')"
+        class="w3-button w3-blue w3-margin-bottom"
+        type="submit"
+        style="margin-left:600px;"
+      >
+        Logout
+      </button>
+    </div>
+  </body>
+</html>

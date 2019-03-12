@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body style="background-color:#F8F8F8;">
+    <div
+      class="w3-container w3-centre w3-card-4 w3-display-middle"
+      style="background-color:white"
+    >
+      <h2 class="w3-text-blue w3-margin-bottom w3-xxlarge">Micropayment</h2>
+      <form method="POST">
+        <label class="w3-label w3-text-blue w3-margin-bottom">Username</label>
+        <input class="w3-input w3-margin-bottom" type="text" name="username" />
+        <label class="w3-label w3-text-blue w3-margin-bottom">Password</label>
+        <input
+          class="w3-input w3-margin-bottom"
+          type="password"
+          name="password"
+        />
+        <button class="w3-button w3-blue" type="submit">Login</button>
+        <p class="w3-text-blue">{{ message }}</p>
+      </form>
+    </div>
+  </body>
+</html>
